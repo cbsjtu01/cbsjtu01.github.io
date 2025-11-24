@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="description"
         content="IMTalker: Efficient Audio-driven Talking Face Generation with Implicit Motion Transfer.">
-  <meta name="keywords" content="IMTalker, Talking Face, Generative AI">
+  <meta name="keywords" content="IMTalker, Talking Face, Generative AI, CVPR">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IMTalker: Efficient Audio-driven Talking Face Generation with Implicit Motion Transfer.</title>
+  <title>IMTalker: Efficient Audio-driven Talking Face Generation</title>
 
+  <!-- Global Styles -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -18,10 +19,28 @@
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    /* 自定义样式：让视频卡片更整齐 */
+    .video-container {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .caption {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #4a4a4a;
+    }
+    .section-title {
+      margin-bottom: 40px !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -35,33 +54,13 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="#">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
+      <!-- 移除了无关的 More Research 下拉菜单，使页面更干净 -->
     </div>
-
   </div>
 </nav>
 
@@ -74,16 +73,17 @@
           <h1 class="title is-1 publication-title">IMTalker: Efficient Audio-driven Talking Face Generation with Implicit Motion Transfer</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a >Bo Chen</a><sup>1,2</sup>,</span>
+              Bo Chen<sup>1,2</sup>,</span>
             <span class="author-block">
-              <a >Tao Liu</a><sup>1</sup>,</span>
+              Tao Liu<sup>1</sup>,</span>
             <span class="author-block">
-              <a >Qi Chen</a><sup>1</sup>,</span>
+              Qi Chen<sup>1</sup>,</span>
             <span class="author-block">
-              <a >Xie Chen</a><sup>1</sup>,</span>
+              Xie Chen<sup>1</sup>,</span>
             <span class="author-block">
-              <a >Zilong Zheng</a><sup>2</sup>,</span>
+              Zilong Zheng<sup>2</sup></span>
           </div>
+
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
             <span class="author-block"><sup>2</sup>Beijing Institute for General Artificial Intelligence</span>
@@ -98,23 +98,21 @@
                   <span>arXiv</span>
                 </a>
               </span>
-            <span class="link-block">
-              <a href="https://github.com/cbsjtu01/IMTalker" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-            </span>
-            <span class="link-block">
-                <a href="https://huggingface.co/spaces/chenxie95/MeanAudio" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <!-- 使用笑脸图标代替 HuggingFace logo (因为 fontawesome 默认没有 HF) -->
-                    <i class="far fa-smile"></i> 
-                  </span>
-                  <span>Demo</span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/cbsjtu01/IMTalker" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
                 </a>
               </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                  <a href="https://huggingface.co/spaces/chenxie95/MeanAudio" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="far fa-smile"></i></span>
+                    <span>Demo</span>
+                  </a>
+                </span>
             </div>
-
           </div>
         </div>
       </div>
@@ -122,274 +120,289 @@
   </div>
 </section>
 
+<!-- Teaser Image Section -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- 增加圆角和阴影，使图片看起来更像 Paper 的 Teaser -->
       <img src="./supp/teaser.png" alt="IMTalker Teaser" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-      
       <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-        <span class="dnerf">IMTalker</span> accepts diverse portrait styles and achieves 
-        <strong>40 FPS</strong> for video-driven and <strong>42 FPS</strong> for audio-driven 
-        talking-face generation on an NVIDIA RTX 4090 GPU at 512&times;512 resolution. 
-        It enables diverse controllability by allowing precise head-pose and eye-gaze inputs alongside audio.
+        <span class="dnerf">IMTalker</span> achieves 
+        <strong>40 FPS</strong> (video-driven) and <strong>42 FPS</strong> (audio-driven) 
+        generation on an RTX 4090. It enables diverse controllability including head-pose and eye-gaze.
       </h2>
     </div>
   </div>
 </section>
 
-
+<!-- Abstract Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Talking face generation aims to synthesize realistic speaking portraits from a single image, yet existing methods often rely on explicit optical flow and local warping, which fail to model complex global motions and cause identity drift. 
+            Talking face generation aims to synthesize realistic speaking portraits from a single image. 
             We present <strong>IMTalker</strong>, a novel framework that achieves efficient and high-fidelity talking face generation through implicit motion transfer. 
-            The core idea is to replace traditional flow-based warping with a cross-attention mechanism that implicitly models motion discrepancy and identity alignment within a unified latent space, enabling robust global motion rendering. 
-            To further preserve speaker identity during cross-identity reenactment, we introduce an <em>Identity-Adaptive Module</em> that projects motion latents into personalized spaces, ensuring clear disentanglement between motion and identity. 
-            In addition, a lightweight <em>Flow-Matching Motion Generator</em> produces vivid and controllable implicit motion vectors from audio, pose, and gaze cues. 
-            Extensive experiments demonstrate that <strong>IMTalker</strong> surpasses prior methods in motion accuracy, identity preservation, and audio–lip synchronization, achieving state-of-the-art quality with superior efficiency, operating at <strong>40 FPS</strong> for video-driven and <strong>42 FPS</strong> for audio-driven generation on an RTX 4090 GPU. 
-            We will release our code and pre-trained models to facilitate applications and future research.
+            The core idea is to replace traditional flow-based warping with a cross-attention mechanism that implicitly models motion discrepancy within a unified latent space. 
+            We introduce an <em>Identity-Adaptive Module</em> to preserve speaker identity and a lightweight <em>Flow-Matching Motion Generator</em> for vivid implicit motion vectors. 
+            Experiments demonstrate that <strong>IMTalker</strong> surpasses prior methods in motion accuracy, identity preservation, and sync quality, achieving state-of-the-art performance.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
-    <!-- Method Overview. -->
+    <!-- Method Overview -->
     <div class="columns is-centered has-text-centered" style="margin-top: 50px;">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="publication-image">
           <img src="./supp/pipeline.svg" alt="IMTalker Architecture" style="width: 100%; margin-bottom: 20px;">
-          
-          <!-- Caption 区域美化：使用较小的字体，两端对齐，模块名称加粗 -->
           <div class="content has-text-justified is-size-6">
             <p>
-              Given a source image, an <b>Identity Encoder</b> and <b>Motion Encoder</b> extract identity features and source motion. 
-              A driving motion latent is either extracted from video by the <b>Motion Encoder</b> or synthesized from audio by a <b>Flow-Matching Motion Generator</b>. 
-              Both motion latents are then personalized by the <b>Identity-Adaptive Module</b>. 
-              Subsequently, the <b>Implicit Motion Transfer Module</b> uses these personalized latents and <i>f<sub>id</sub></i> to generate aligned features via a motion decoder and cross-attention. 
-              Finally, the <b>Synthesis Network</b> renders these aligned features into the final photorealistic image.
+              Given a source image, IMTalker extracts identity and motion features. Driving motion is obtained via a <b>Motion Encoder</b> (video-driven) or a <b>Flow-Matching Generator</b> (audio-driven). These are processed by an <b>Identity-Adaptive Module</b> and fed into the <b>Implicit Motion Transfer Module</b> to render the final photorealistic image.
             </p>
           </div>
-          
         </div>
       </div>
     </div>
-    <!--/ Method Overview. -->
   </div>
 </section>
 
+<!-- ======================================================= -->
+<!-- RESULTS SECTION STARTS HERE -->
+<!-- ======================================================= -->
+
+<!-- 1. Diverse Audio-Driven Generation -->
 <section class="section">
   <div class="container is-max-desktop">
-
+    <h2 class="title is-3 has-text-centered section-title">Diverse Audio-Driven Generation</h2>
+    <p class="has-text-centered" style="margin-bottom: 20px;">
+      IMTalker generates vivid facial expressions synchronized with various audio inputs.
+    </p>
+    
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Diverse Audio-Driven Generation</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_1.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_2.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_3.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_4.mp4"
-                    type="video/mp4">
+      <!-- Video 1 -->
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <!-- 请确保文件夹重命名为 Diverse_Audio -->
+            <source src="./supp/Diverse_Audio/video_1.mp4" type="video/mp4">
           </video>
         </div>
+        <p class="has-text-centered caption">Sample 1: Natural speech with blinking.</p>
       </div>
-      <!--/ Visual Effects. -->
 
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Video-driven</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Self Reenactment</h3>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./supp/Self- and Cross-Driven Reenactment/self_reenactment/video_1.mp4"
-                      type="video/mp4">
-            </video>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./supp/Self- and Cross-Driven Reenactment/self_reenactment/video_2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        <h3 class="title is-4">Cross Reenactment</h3>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./supp/Self- and Cross-Driven Reenactment/cross_reeactment/video_1.mp4"
-                      type="video/mp4">
-            </video>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./supp/Self- and Cross-Driven Reenactment/cross_reeactment/video_2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+      <!-- Video 2 -->
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Diverse_Audio/video_2.mp4" type="video/mp4">
+          </video>
         </div>
-
+        <p class="has-text-centered caption">Sample 2: Expressive singing/speech.</p>
       </div>
     </div>
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Long Video Generation</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Long_Video_Generation/concat.mp4"
-                    type="video/mp4">
-          </video>
-
-        </div>
-      </div>
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Controllable Generation</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Controllable Generation/video_1.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Controllable Generation/video_2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Video_Driven Comparisions</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Video_Driven Comparisions/video_1.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Video_Driven Comparisions/video_2.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Video_Driven Comparisions/video_3.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Video_Driven Comparisions/video_4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Audio_Driven Comparisions</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Audio_Driven Comparisions/video_1.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Audio_Driven Comparisions/video_2.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Audio_Driven Comparisions/video_3.mp4"
-                    type="video/mp4">
-          </video>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./supp/Audio_Driven Comparisions/video_4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-    </div>
+  </div>
 </section>
 
+<!-- 2. Video-Driven (Reenactment) -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Video-Driven Reenactment</h2>
+    
+    <!-- Self Reenactment -->
+    <h3 class="title is-4">Self-Reenactment</h3>
+    <p class="has-text-centered" style="margin-bottom: 20px;">Reconstructing the source identity using its own driving video.</p>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Reenactment/self_reenactment/video_1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Reenactment/self_reenactment/video_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cross Reenactment -->
+    <h3 class="title is-4" style="margin-top: 30px;">Cross-Reenactment</h3>
+    <p class="has-text-centered" style="margin-bottom: 20px;">Driving a source identity with motion from a different person.</p>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Reenactment/cross_reeactment/video_1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Reenactment/cross_reeactment/video_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Controllable Generation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Controllable Generation</h2>
+    <p class="has-text-centered" style="margin-bottom: 20px;">
+      Explicit control over <b>head pose</b> and <b>eye gaze</b> while maintaining lip synchronization.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Controllable/video_1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="has-text-centered caption">Pose Control</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Controllable/video_2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="has-text-centered caption">Gaze Control</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Long Video Generation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Long Video Generation</h2>
+    <p class="has-text-centered" style="margin-bottom: 20px;">
+      Stable generation over long durations without artifact accumulation.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <div class="video-container">
+          <video poster="" controls muted loop playsinline width="100%">
+            <source src="./supp/Long_Video/concat.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Comparisons -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Qualitative Comparisons</h2>
+    
+    <p class="has-text-centered" style="margin-bottom: 20px;">
+      We compare IMTalker with state-of-the-art methods. Each video below shows a side-by-side comparison.
+    </p>
+
+    <h4 class="title is-4">Video-Driven Comparison</h4>
+    <!-- 改为双列布局 (is-half)，因为对比视频通常包含丰富细节，需要更大展示空间 -->
+    <div class="columns is-centered is-multiline">
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Video_Compare/video_1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 1</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Video_Compare/video_2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 2</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Video_Compare/video_3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 3</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Video_Compare/video_4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 4</p>
+      </div>
+    </div>
+
+    <h4 class="title is-4" style="margin-top: 30px;">Audio-Driven Comparison</h4>
+    <div class="columns is-centered is-multiline">
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Audio_Compare/video_1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 1</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Audio_Compare/video_2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 2</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Audio_Compare/video_3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 3</p>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+            <video controls muted loop playsinline width="100%">
+                <source src="./supp/Audio_Compare/video_4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="caption has-text-centered">Comparison Sample 4</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{imtalker2025,
+  title={IMTalker: Efficient Audio-driven Talking Face Generation with Implicit Motion Transfer},
+  author={Bo, Chen and Xie, Chen},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
 }</code></pre>
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
+      <p>
+        Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
     </div>
   </div>
 </footer>
