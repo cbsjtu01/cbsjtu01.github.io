@@ -106,11 +106,21 @@
               </span>
               <!-- Demo Link. -->
               <span class="link-block">
-                  <a href="https://huggingface.co/spaces/chenxie95/MeanAudio" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="far fa-smile"></i></span>
-                    <span>Demo</span>
-                  </a>
-                </span>
+                <a href="https://huggingface.co/spaces/chenxie95/IMTalker" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="https://huggingface.co/favicon.ico" style="width: 1em; height: 1em;">
+                  </span>
+                  <span>Space</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/cbsjtu01/IMTalkerhttps://huggingface.co/cbsjtu01/IMTalker" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="https://huggingface.co/favicon.ico" style="width: 1em; height: 1em;">
+                  </span>
+                  <span>Model</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -172,34 +182,52 @@
 <!-- RESULTS SECTION STARTS HERE -->
 <!-- ======================================================= -->
 
-<!-- 1. Diverse Audio-Driven Generation -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered section-title">Diverse Audio-Driven Generation</h2>
     <p class="has-text-centered" style="margin-bottom: 20px;">
       IMTalker generates vivid facial expressions synchronized with various audio inputs.
     </p>
-    
+
     <div class="columns is-centered">
-      <!-- Video 1 -->
       <div class="column is-half">
-        <div class="video-container">
-          <video poster="" controls muted loop playsinline width="100%">
-            <!-- 请确保文件夹重命名为 Diverse_Audio -->
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_1.mp4" type="video/mp4">
-          </video>
+        <div style="margin-bottom: 2rem;">
+            <div class="video-container">
+            <video poster="" controls muted loop playsinline width="100%">
+                <source src="./supp/Diverse_Audio_Driven_Generation/video_1.mp4" type="video/mp4">
+            </video>
+            </div>
+            <p class="has-text-centered caption">Sample 1</p>
         </div>
-        <p class="has-text-centered caption">Sample 1: Natural speech with blinking.</p>
+
+        <div>
+            <div class="video-container">
+            <video poster="" controls muted loop playsinline width="100%">
+                <source src="./supp/Diverse_Audio_Driven_Generation/video_3.mp4" type="video/mp4">
+            </video>
+            </div>
+            <p class="has-text-centered caption">Sample 3</p>
+        </div>
       </div>
 
-      <!-- Video 2 -->
       <div class="column is-half">
-        <div class="video-container">
-          <video poster="" controls muted loop playsinline width="100%">
-            <source src="./supp/Diverse_Audio_Driven_Generation/video_2.mp4" type="video/mp4">
-          </video>
+         <div style="margin-bottom: 2rem;">
+            <div class="video-container">
+            <video poster="" controls muted loop playsinline width="100%">
+                <source src="./supp/Diverse_Audio_Driven_Generation/video_2.mp4" type="video/mp4">
+            </video>
+            </div>
+            <p class="has-text-centered caption">Sample 2</p>
         </div>
-        <p class="has-text-centered caption">Sample 2: Expressive singing/speech.</p>
+
+        <div>
+            <div class="video-container">
+            <video poster="" controls muted loop playsinline width="100%">
+                <source src="./supp/Diverse_Audio_Driven_Generation/video_4.mp4" type="video/mp4">
+            </video>
+            </div>
+            <p class="has-text-centered caption">Sample 4</p>
+        </div>
       </div>
     </div>
   </div>
@@ -212,7 +240,7 @@
     
     <!-- Self Reenactment -->
     <h3 class="title is-4">Self-Reenactment</h3>
-    <p class="has-text-centered" style="margin-bottom: 20px;">Reconstructing the source identity using its own driving video.</p>
+    <p class="has-text-centered" style="margin-bottom: 20px;">Reconstructing the video using its own driving video.</p>
     <div class="columns is-centered">
       <div class="column is-half">
         <div class="video-container">
@@ -257,7 +285,7 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered section-title">Controllable Generation</h2>
     <p class="has-text-centered" style="margin-bottom: 20px;">
-      Explicit control over <b>head pose</b> and <b>eye gaze</b> while maintaining lip synchronization.
+      Explicit control over head pose and eye gaze while maintaining lip synchronization.
     </p>
     <div class="columns is-centered">
       <div class="column is-half">
